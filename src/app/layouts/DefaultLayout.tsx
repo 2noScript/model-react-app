@@ -30,7 +30,7 @@ export default function DefaultLayout(props: ILayoutProps) {
   }
   const [collapsed, setCollapsed] = useState(true);
   return (
-    <Layout className="h-[100vh]">
+    <Layout className="h-[100vh]" hasSider={true}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -44,7 +44,7 @@ export default function DefaultLayout(props: ILayoutProps) {
           onSelect={handleSelectItem}
         />
       </Sider>
-      <Layout className="h-full">
+      <Layout className="h-full" hasSider={false}>
         <Content>{children}</Content>
         <Footer className="text-center">
           Ant Design ©2023 Created by Ant UED
