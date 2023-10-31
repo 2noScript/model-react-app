@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { instanceAxios } from "../../utils/request";
-import { URL } from "../../constants";
+import { instanceAxios } from "../utils/request";
+import { URL } from "../constants";
 // import { selectIsLogin, selectToken } from 'store/authSlice';
 
 export default function PrivateRoute({ children }: { children: JSX.Element }) {

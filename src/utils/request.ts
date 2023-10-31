@@ -1,7 +1,6 @@
-import { notification } from "antd";
 import axios, { AxiosRequestConfig } from "axios";
-import { defaultTo, get } from "lodash";
-import { ERROR_MESSAGE, URL } from "../constants";
+// import { defaultTo, get } from "lodash";
+import { URL } from "../constants";
 import { store } from "../store";
 import { actionLogout } from "../store/ authSlice";
 
@@ -14,16 +13,14 @@ instanceAxios.defaults.headers.common["Content-Type"] = "application/json";
 instanceAxios.interceptors.response.use(
   (response) => {
     if (response.data.code && +response.data.code !== 200) {
-      const message = defaultTo(get(response, "data.message"), ERROR_MESSAGE);
-      notification.error({ message });
+      // const message = defaultTo(get(response, "data.message"), ERROR_MESSAGE);
       return Promise.reject(response);
     }
     return response;
   },
   (error) => {
     if (!axios.isCancel(error)) {
-      const message = defaultTo(get(error, "message"), ERROR_MESSAGE);
-      notification.error({ message });
+      // const message = defaultTo(get(error, "message"), ERROR_MESSAGE);
     }
 
     const { url } = error.config;

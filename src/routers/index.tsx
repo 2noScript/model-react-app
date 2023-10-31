@@ -1,6 +1,6 @@
 import { ReactElement, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { URL } from "../../constants";
+import { URL } from "../constants";
 import DefaultLayout from "../layouts/DefaultLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
